@@ -1,6 +1,7 @@
 <template>
   <div class="app-container">
     <upload-excel-component :on-success="handleSuccess" :before-upload="beforeUpload" />
+    <el-tag style="width: 100%;margin-top:20px;" size="medium">数据预览</el-tag>
     <el-table :data="tableData" border highlight-current-row style="width: 100%;margin-top:20px;">
       <el-table-column v-for="item of tableHeader" :key="item" :prop="item" :label="item" />
     </el-table>
@@ -34,7 +35,7 @@ export default {
       return false
     },
     handleSuccess({ results, header }) {
-      this.tableData = results
+      this.tableData = results.slice(0, 20) // only show first 20 rows
       this.tableHeader = header
     }
   }

@@ -193,6 +193,7 @@ export const asyncRoutes = [
   {
     path: '/example',
     component: Layout,
+    hidden: true,
     redirect: '/example/list',
     name: 'Example',
     meta: {
@@ -238,6 +239,7 @@ export const asyncRoutes = [
   {
     path: '/error',
     component: Layout,
+    hidden: true,
     redirect: 'noRedirect',
     name: 'ErrorPages',
     meta: {
@@ -263,6 +265,7 @@ export const asyncRoutes = [
   {
     path: '/error-log',
     component: Layout,
+    hidden: true,
     children: [
       {
         path: 'log',
@@ -313,6 +316,7 @@ export const asyncRoutes = [
   {
     path: '/zip',
     component: Layout,
+    hidden: true,
     redirect: '/zip/download',
     alwaysShow: true,
     name: 'Zip',
@@ -330,6 +334,7 @@ export const asyncRoutes = [
   {
     path: '/pdf',
     component: Layout,
+    hidden: true,
     redirect: '/pdf/index',
     children: [
       {
@@ -349,6 +354,7 @@ export const asyncRoutes = [
   {
     path: '/theme',
     component: Layout,
+    hidden: true,
     children: [
       {
         path: 'index',
@@ -362,6 +368,7 @@ export const asyncRoutes = [
   {
     path: '/clipboard',
     component: Layout,
+    hidden: true,
     children: [
       {
         path: 'index',
@@ -375,6 +382,7 @@ export const asyncRoutes = [
   {
     path: '/i18n',
     component: Layout,
+    hidden: true,
     children: [
       {
         path: 'index',
@@ -388,6 +396,7 @@ export const asyncRoutes = [
   {
     path: 'external-link',
     component: Layout,
+    hidden: true,
     children: [
       {
         path: 'https://github.com/PanJiaChen/vue-element-admin',
