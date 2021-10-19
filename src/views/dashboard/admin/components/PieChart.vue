@@ -56,17 +56,17 @@ export default {
         },
         series: [
           {
-            name: 'WEEKLY WRITE ARTICLES',
+            name: '菜品',
             type: 'pie',
             roseType: 'radius',
             radius: [15, 95],
             center: ['50%', '38%'],
             data: [
-              { value: 320, name: 'Industries' },
-              { value: 240, name: 'Technology' },
-              { value: 149, name: 'Forex' },
-              { value: 100, name: 'Gold' },
-              { value: 59, name: 'Forecasts' }
+              { value: 320, name: '草原羔羊肉' },
+              { value: 240, name: '招牌虾滑' },
+              { value: 149, name: '鹌鹑蛋' },
+              { value: 100, name: '毛肚' },
+              { value: 59, name: '捞派麻辣滑牛肉' }
             ],
             animationEasing: 'cubicInOut',
             animationDuration: 2600

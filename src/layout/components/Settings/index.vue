@@ -22,12 +22,14 @@
         <span>{{ $t('settings.sidebarLogo') }}</span>
         <el-switch v-model="sidebarLogo" class="drawer-switch" />
       </div>
-      <a v-if="isShowJob" href="https://panjiachen.github.io/vue-element-admin-site/zh/job/" target="_blank" class="job-link">
-        <el-alert
-          title="部门目前非常缺人！有兴趣的可以点击了解详情。坐标: 字节跳动"
-          type="success"
-          :closable="false"
-        />
+      <a v-if="isShowJob" target="_blank" class="job-link">
+        <el-alert title="Provided By" type="success" :closable="false">
+          <template slot="title">
+            <div class="iconSize">Provided By -</div>
+            <div class="iconSize">西门子中国研究院，</div>
+            <div class="iconSize">人工智能加速和咨询研发部</div>
+          </template>
+        </el-alert>
       </a>
 
       <div v-if="lang === 'zh'" class="drawer-item">
