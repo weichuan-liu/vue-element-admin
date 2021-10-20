@@ -132,50 +132,25 @@ export const constantRoutes = [
  */
 export const asyncRoutes = [
   {
-    path: '/permission',
+    path: '/tab',
     component: Layout,
-    redirect: '/permission/page',
-    alwaysShow: true, // will always show the root menu
-    name: 'Permission',
-    meta: {
-      title: 'permission',
-      icon: 'lock',
-      roles: ['admin', 'editor'] // you can set roles in root nav
-    },
     children: [
       {
-        path: 'page',
-        component: () => import('@/views/permission/page'),
-        name: 'PagePermission',
-        meta: {
-          title: 'pagePermission',
-          roles: ['admin'] // or you can only set roles in sub nav
-        }
-      },
-      {
-        path: 'directive',
-        component: () => import('@/views/permission/directive'),
-        name: 'DirectivePermission',
-        meta: {
-          title: 'directivePermission'
-          // if do not set roles, means: this page does not require permission
-        }
-      },
-      {
-        path: 'role',
-        component: () => import('@/views/permission/role'),
-        name: 'RolePermission',
-        meta: {
-          title: 'rolePermission',
-          roles: ['admin']
-        }
+        path: 'index',
+        component: () => import('@/views/tab/index'),
+        name: 'Tab',
+        meta: { title: 'tab', icon: 'tab' }
       }
     ]
   },
 
+  chartsRouter,
+  tableRouter,
+
   {
     path: '/icon',
     component: Layout,
+    hidden: true,
     children: [
       {
         path: 'index',
@@ -188,9 +163,7 @@ export const asyncRoutes = [
 
   /** when your routing map is too long, you can split it into small modules **/
   componentsRouter,
-  chartsRouter,
   nestedRouter,
-  tableRouter,
 
   {
     path: '/example',
@@ -221,19 +194,6 @@ export const asyncRoutes = [
         component: () => import('@/views/example/list'),
         name: 'ArticleList',
         meta: { title: 'articleList', icon: 'list' }
-      }
-    ]
-  },
-
-  {
-    path: '/tab',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        component: () => import('@/views/tab/index'),
-        name: 'Tab',
-        meta: { title: 'tab', icon: 'tab' }
       }
     ]
   },
@@ -405,6 +365,48 @@ export const asyncRoutes = [
       {
         path: 'https://github.com/PanJiaChen/vue-element-admin',
         meta: { title: 'externalLink', icon: 'link' }
+      }
+    ]
+  },
+
+  {
+    path: '/permission',
+    component: Layout,
+    redirect: '/permission/page',
+    alwaysShow: true, // will always show the root menu
+    name: 'Permission',
+    meta: {
+      title: 'permission',
+      icon: 'lock',
+      roles: ['admin', 'editor'] // you can set roles in root nav
+    },
+    children: [
+      {
+        path: 'page',
+        component: () => import('@/views/permission/page'),
+        name: 'PagePermission',
+        meta: {
+          title: 'pagePermission',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      },
+      {
+        path: 'directive',
+        component: () => import('@/views/permission/directive'),
+        name: 'DirectivePermission',
+        meta: {
+          title: 'directivePermission'
+          // if do not set roles, means: this page does not require permission
+        }
+      },
+      {
+        path: 'role',
+        component: () => import('@/views/permission/role'),
+        name: 'RolePermission',
+        meta: {
+          title: 'rolePermission',
+          roles: ['admin']
+        }
       }
     ]
   },
