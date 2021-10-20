@@ -86,6 +86,7 @@ export const constantRoutes = [
   {
     path: '/documentation',
     component: Layout,
+    hidden: true,
     children: [
       {
         path: 'index',
@@ -98,6 +99,7 @@ export const constantRoutes = [
   {
     path: '/guide',
     component: Layout,
+    hidden: true,
     redirect: '/guide/index',
     children: [
       {
@@ -295,12 +297,14 @@ export const asyncRoutes = [
       {
         path: 'export-selected-excel',
         component: () => import('@/views/excel/select-excel'),
+        hidden: true,
         name: 'SelectExcel',
         meta: { title: 'selectExcel' }
       },
       {
         path: 'export-merge-header',
         component: () => import('@/views/excel/merge-header'),
+        hidden: true,
         name: 'MergeHeader',
         meta: { title: 'mergeHeader' }
       },
